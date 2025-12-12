@@ -15,7 +15,7 @@
     }
     const sum = add(4)(6);
     console.log("sum of a and b = ", sum);
-   //2. Create a curried multiply function
+    //2. Create a curried multiply function
 
     function fn(a) {
       return function (b) {
@@ -27,15 +27,24 @@
     console.log("output :", fn(10)(10)(10));
 
     //3. Write a curry function that always returns the same value passed
-    
-    
+
     function fnc(a) {
       return function () {
         return function () {
-          return a ;
+          return a;
         };
       };
     }
     console.log("output :", fnc(10)()());
+
+    //4. Create a curried function for discount calculation
+    function calculatediscount(discount) {
+      return function (price) {
+        return price - discount * price;
+      };
+    }
+    console.log("Discont on product is =", calculatediscount(0.2)(400));
+
+    //
   </script>
 </html>
