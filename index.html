@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Currying</title>
+  </head>
+  <body></body>
+  <script>
+    //1. Convert a normal function add(a, b) into a curried version
+    function add(a) {
+      return function (b) {
+        return a + b;
+      };
+    }
+    const sum = add(4)(6);
+    console.log("sum of a and b = ", sum);
+   //2. Create a curried multiply function
+
+    function fn(a) {
+      return function (b) {
+        return function (c) {
+          return a * b * c;
+        };
+      };
+    }
+    console.log("output :", fn(10)(10)(10));
+
+    //3. Write a curry function that always returns the same value passed
+    
+    
+    function fnc(a) {
+      return function () {
+        return function () {
+          return a ;
+        };
+      };
+    }
+    console.log("output :", fnc(10)()());
+  </script>
+</html>
